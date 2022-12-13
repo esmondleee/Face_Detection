@@ -21,9 +21,7 @@ const db = knex({
   });
 
 let PORT = process.env.PORT;
-if (PORT === '' || PORT === NULL) {
-    PORT = 3000;
-}
+
 
 
 const app = express();
@@ -58,7 +56,7 @@ bcrypt.compare("veggies", hash, function(err, res) {
     // res = false
 });
 */
-app.listen(PORT, () => {
-    console.log("app is running on port 3000");
+app.listen(PORT || 3000, () => {
+    console.log(`app is running on port ${PORT}`);
 });
 
