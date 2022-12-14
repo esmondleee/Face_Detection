@@ -12,8 +12,9 @@ const image = require('./controllers/image');
 const db = knex({
     client: 'pg',
     connection: {
-      host : process.env.DATABASE_URL,//'postgresql-rectangular-34459',
-      ssl: true
+        connectionString : process.env.DATABASE_URL,// postgresql-rectangular-34459' //
+        //host: 127.0.0.1,
+        ssl: true // no need for local database
       
       /* 
       // For local database
