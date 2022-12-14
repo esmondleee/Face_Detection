@@ -14,7 +14,9 @@ const db = knex({
     connection: {
         connectionString : process.env.DATABASE_URL,// postgresql-rectangular-34459' //
         //host: 127.0.0.1,
-        ssl: true // no need for local database
+        ssl: {
+            rejectUnauthorized: false
+        } // no need ssl for local database
       
       /* 
       // For local database
